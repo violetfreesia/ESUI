@@ -1,0 +1,21 @@
+/* snapshot page styles (owned by this page only). Colors come from CSS variables only. */
+
+/* 恢复标签页：参数区和结果区是普通分区，不做成卡片 */
+.snap-sec { flex: none; }
+.snap-h { margin: 0 0 10px; font-size: var(--fs-md); font-weight: 600; }
+.snap-form { max-width: 720px; }
+.snap-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.snap-row2 > .field { min-width: 0; }
+.snap-run { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.snap-warn { display: flex; align-items: flex-start; gap: 6px; max-width: 720px; color: var(--text-2); font-size: var(--fs-xs); line-height: 1.6; }
+.snap-warn .ic { flex: none; margin-top: 2px; color: var(--warn); }
+
+/* 表格里的“执行”：共享的 ghost 样式没有 warn 色，这里补上，提示这是会改动集群的操作 */
+.btn.snap-act-warn { color: var(--warn); }
+
+/* 点击追加索引名的 chip 列表（创建快照、创建策略、恢复） */
+.snap-picks { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: var(--fs-xs); }
+.snap-picks .chip { height: 22px; padding: 0 10px; font-family: var(--font-mono); }
+
+/* ILM 表格“应用索引”列：完整列出，自动换行，不截断 */
+.snap-wrap { white-space: normal; overflow-wrap: anywhere; word-break: break-all; line-height: 1.6; padding: 6px 0; font-size: var(--fs-xs); }

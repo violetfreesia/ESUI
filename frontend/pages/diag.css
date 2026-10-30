@@ -1,0 +1,18 @@
+/* diag page styles (owned by this page only). */
+.diag-body { overflow: hidden; }
+.diag-note { display: flex; align-items: flex-start; gap: 8px; flex: none; padding: 8px 12px; border-radius: var(--r-ctl); background: var(--info-soft); color: var(--text); font-size: var(--fs-sm); }
+.diag-note .ic { color: var(--info); margin-top: 2px; }
+.diag-tbl { min-height: 200px; }
+.diag-prim { color: var(--text); font-weight: 600; }
+.diag-hot { position: relative; flex: none; }
+.diag-hot .code { min-height: calc(20 * 1.65 * var(--fs-xs) + 22px); max-height: calc(30 * 1.65 * var(--fs-xs) + 22px); }
+
+/* tables wider than the window: keep the empty state inside the visible width instead of centring it in the full table */
+.diag-tbl .tbl-scroll { container-type: inline-size; }
+.diag-tbl td.empty-cell { overflow: visible; }
+.diag-tbl td.empty-cell > * { position: sticky; left: 0; width: 100cqw; }
+
+/* shards table: the action column stays on the right edge while the other columns scroll */
+.diag-pin th:last-child, .diag-pin td:last-child:not(.empty-cell) { position: sticky; right: 0; border-left: 1px solid var(--line-soft); }
+.diag-pin td:last-child:not(.empty-cell) { z-index: 1; }
+.diag-pin th:last-child { z-index: 3; }

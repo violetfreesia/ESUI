@@ -1,0 +1,46 @@
+/* ESUI design tokens. Dark is the default theme; light is [data-theme="light"].
+   Semantics: blue = actions/links only. teal/amber/red/sky = status only. */
+:root {
+  --font-sans: "PingFang SC", "HarmonyOS Sans SC", "Noto Sans SC", "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --fs-xs: 12px; --fs-sm: 13px; --fs-md: 14px; --fs-lg: 16px; --fs-xl: 20px; --fs-2xl: 26px;
+  --r-ctl: 4px; --r-box: 6px; --r-pop: 8px;
+  --h-ctl: 28px; --h-ctl-sm: 24px; --row-h: 34px;
+  --nav-w: 184px; --nav-w-collapsed: 52px; --top-h: 44px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0E1430; --surface: #151C3B; --raised: #1E2748; --sunken: #0A1028;
+  --line: #2A3459; --line-soft: #212A4D;
+  --text: #E8ECFA; --text-2: #A6B0D2; --text-3: #7480AB;
+  --primary: #3D6BFF; --primary-hover: #5681FF; --primary-soft: rgba(91, 125, 255, .18);
+  --link: #8FA9FF; --on-primary: #FFFFFF;
+  --ok: #2CC9BB; --ok-soft: rgba(44, 201, 187, .16);
+  --warn: #F5A524; --warn-soft: rgba(245, 165, 36, .16);
+  --err: #F0646A; --err-soft: rgba(240, 100, 106, .16);
+  --info: #5AB0FF; --info-soft: rgba(90, 176, 255, .16);
+  --danger-solid: #E5484D;
+  --overlay: rgba(4, 7, 20, .62); --mask-bg: rgba(14, 20, 48, .6);
+  --shadow-pop: 0 14px 40px rgba(0, 0, 0, .5);
+  --c-key: #8FA9FF; --c-str: #7FE0C7; --c-num: #F5C26B; --c-lit: #F08FA0;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #F4F6FB; --surface: #FFFFFF; --raised: #EEF1FA; --sunken: #EAEDF7;
+  --line: #D9DEEE; --line-soft: #E8ECF6;
+  --text: #1A2145; --text-2: #4F587D; --text-3: #7F88AC;
+  --primary: #3D6BFF; --primary-hover: #2F58E0; --primary-soft: rgba(61, 107, 255, .10);
+  --link: #2F58E0; --on-primary: #FFFFFF;
+  --ok: #0E9A8D; --ok-soft: rgba(14, 154, 141, .12);
+  --warn: #C77700; --warn-soft: rgba(199, 119, 0, .13);
+  --err: #D1343B; --err-soft: rgba(209, 52, 59, .11);
+  --info: #1B7FE0; --info-soft: rgba(27, 127, 224, .11);
+  --danger-solid: #D1343B;
+  --overlay: rgba(26, 33, 69, .35); --mask-bg: rgba(244, 246, 251, .6);
+  --shadow-pop: 0 12px 32px rgba(26, 33, 69, .16);
+  --c-key: #2F58E0; --c-str: #0B7F74; --c-num: #A65F00; --c-lit: #B8324A;
+}

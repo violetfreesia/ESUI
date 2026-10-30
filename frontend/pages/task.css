@@ -1,0 +1,14 @@
+/* task page styles (owned by this page only). */
+.task-body { overflow: hidden; }
+.task-tbl { min-height: 220px; }
+.task-nocancel { display: inline-block; cursor: not-allowed; }
+
+/* the table is wider than most windows: keep the action column on the right edge while the other columns scroll */
+.task-tbl th:last-child, .task-tbl td:last-child:not(.empty-cell) { position: sticky; right: 0; border-left: 1px solid var(--line-soft); }
+.task-tbl td:last-child:not(.empty-cell) { z-index: 1; }
+.task-tbl th:last-child { z-index: 3; }
+
+/* keep the empty state inside the visible width instead of centring it in the full table */
+.task-tbl .tbl-scroll { container-type: inline-size; }
+.task-tbl td.empty-cell { overflow: visible; }
+.task-tbl td.empty-cell > * { position: sticky; left: 0; width: 100cqw; }

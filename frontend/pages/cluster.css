@@ -1,0 +1,16 @@
+/* cluster page styles (owned by this page only). */
+.cluster-name { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.cluster-name-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.cluster-name .tag { flex: none; }
+.cluster-ops { display: flex; align-items: center; gap: 4px; }
+
+.cluster-empty { padding: 56px 0; }
+.cluster-empty-actions { display: flex; justify-content: center; gap: 8px; margin-top: 8px; }
+
+/* add / edit drawer */
+.cluster-pwd { display: flex; align-items: center; gap: 8px; }
+.cluster-pwd .input-wrap { flex: 1 1 auto; }
+.cluster-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.input-wrap.cluster-invalid .input { border-color: var(--err); }
+.input-wrap.cluster-invalid .input:focus { box-shadow: 0 0 0 2px var(--err-soft); }
+.cluster-err { color: var(--err); font-size: var(--fs-xs); }

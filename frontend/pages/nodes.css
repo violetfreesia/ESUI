@@ -1,0 +1,4 @@
+/* nodes page styles */
+.nodes-usage { display: flex; flex-direction: column; gap: 3px; padding: 5px 0; font-size: var(--fs-xs); }
+.nodes-usage .progress-track { height: 4px; }
+.nodes-off { display: flex; flex-direction: column; align-items: center; gap: 4px; padding-bottom: 28px; }

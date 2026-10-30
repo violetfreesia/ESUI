@@ -1,0 +1,16 @@
+{
+  "name": "ESUI",
+  "outputfilename": "ESUI",
+  "wailsjsdir": "./build/wailsjs",
+  "author": {
+    "name": "bronya0",
+    "email": "tangssst@qq.com"
+  },
+  "info": {
+    "companyName": "bronya0",
+    "productName": "ESUI",
+    "productVersion": "1.0.0",
+    "copyright": "Copyright © 2024",
+    "comments": "comments"
+  }
+}

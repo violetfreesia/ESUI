@@ -1,0 +1,16 @@
+/* settings page styles (owned by this page only). */
+.settings-wrap { flex: none; width: 100%; max-width: 640px; padding-bottom: 8px; }
+.settings-group { display: flex; align-items: center; gap: 8px; margin-top: 22px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.settings-form > .settings-group:first-child { margin-top: 4px; }
+.settings-group h2 { font-size: var(--fs-md); font-weight: 600; }
+.settings-group .btn { margin-left: auto; }
+
+.settings-row { display: grid; grid-template-columns: 120px minmax(0, 1fr); align-items: center; gap: 12px; min-height: 44px; padding: 6px 0; border-bottom: 1px solid var(--line-soft); }
+.settings-label { color: var(--text-2); }
+.settings-control { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.settings-hint { color: var(--text-3); font-size: var(--fs-xs); }
+.settings-theme { gap: 6px; color: var(--text-2); }
+.settings-actions { padding: 16px 0 0; }
+
+.settings-info { position: relative; min-height: 120px; margin-top: 10px; }
+.settings-info .code { max-height: 420px; }

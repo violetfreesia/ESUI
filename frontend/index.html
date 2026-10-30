@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ESUI</title>
+  <script>
+    // set theme before first paint
+    (function () {
+      try {
+        var t = JSON.parse(localStorage.getItem('esui:theme'));
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { /* default dark */ }
+    })();
+  </script>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/data.css">
+  <link rel="stylesheet" href="css/overlay.css">
+  <link rel="stylesheet" href="pages/cluster.css">
+  <link rel="stylesheet" href="pages/nodes.css">
+  <link rel="stylesheet" href="pages/health.css">
+  <link rel="stylesheet" href="pages/metrics.css">
+  <link rel="stylesheet" href="pages/index.css">
+  <link rel="stylesheet" href="pages/docs.css">
+  <link rel="stylesheet" href="pages/templates.css">
+  <link rel="stylesheet" href="pages/analyze.css">
+  <link rel="stylesheet" href="pages/rest.css">
+  <link rel="stylesheet" href="pages/diag.css">
+  <link rel="stylesheet" href="pages/task.css">
+  <link rel="stylesheet" href="pages/snapshot.css">
+  <link rel="stylesheet" href="pages/settings.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <aside class="nav" id="nav"></aside>
+    <header class="topbar" id="topbar"></header>
+    <main class="view" id="view"></main>
+  </div>
+  <div id="overlay-root"></div>
+
+  <script src="js/icons.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/ui-util.js"></script>
+  <script src="js/ui-tabs.js"></script>
+  <script src="js/ui-table.js"></script>
+  <script src="js/ui-overlay.js"></script>
+  <script src="js/ui-menu.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/shell.js"></script>
+
+  <!-- page helpers (attach to ESUI.lib.*, read at mount time) -->
+  <script src="pages/rest-data.js"></script>
+  <script src="pages/rest-editor.js"></script>
+  <script src="pages/docs-query.js"></script>
+  <script src="pages/docs-ui.js"></script>
+  <script src="pages/docs-tabs.js"></script>
+  <script src="pages/docs-browse.js"></script>
+  <script src="pages/index-dialogs.js"></script>
+  <script src="pages/snapshot-forms.js"></script>
+
+  <script src="pages/cluster.js"></script>
+  <script src="pages/nodes.js"></script>
+  <script src="pages/health.js"></script>
+  <script src="pages/metrics.js"></script>
+  <script src="pages/index.js"></script>
+  <script src="pages/docs.js"></script>
+  <script src="pages/templates.js"></script>
+  <script src="pages/analyze.js"></script>
+  <script src="pages/rest.js"></script>
+  <script src="pages/diag.js"></script>
+  <script src="pages/task.js"></script>
+  <script src="pages/snapshot.js"></script>
+  <script src="pages/settings.js"></script>
+</body>
+</html>

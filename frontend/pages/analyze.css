@@ -1,0 +1,30 @@
+/* analyze page styles (owned by this page only). Class prefix: analyze- */
+.analyze-form { flex: none; }
+.analyze-row { display: flex; flex-wrap: wrap; gap: 0 16px; }
+.analyze-row > .field { flex: 1 1 240px; max-width: 360px; min-width: 0; }
+.analyze-form .textarea { resize: none; overflow-y: hidden; max-height: 190px; }
+.analyze-actions { flex-wrap: wrap; gap: 8px 16px; }
+.analyze-samples { gap: 2px; }
+
+/* filterable combo (index / analyzer / field) */
+.analyze-combo { position: relative; flex: 1; min-width: 0; }
+.analyze-combo .input-wrap { display: flex; }
+.analyze-combo.is-disabled .input-wrap { pointer-events: none; }
+.analyze-combo.is-disabled .input-wrap .input-clear { display: none; }
+.analyze-combo-list {
+  position: absolute; z-index: 30; top: calc(100% + 4px); left: 0; right: 0; min-width: 160px; max-height: 260px; overflow: auto; padding: 4px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-pop); box-shadow: var(--shadow-pop);
+}
+.analyze-combo-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 28px; padding: 0 8px;
+  border-radius: var(--r-ctl); white-space: nowrap; cursor: pointer;
+}
+.analyze-combo-item:hover, .analyze-combo-item.active { background: var(--primary-soft); color: var(--link); }
+.analyze-combo-item.selected { color: var(--link); font-weight: 600; }
+.analyze-combo-hint { color: var(--text-3); font-size: var(--fs-xs); }
+
+/* result */
+.analyze-result { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 280px; gap: 8px; }
+.analyze-result-head { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 12px; flex: none; }
+.analyze-result-title { font-weight: 600; }
+.analyze-meta { font-size: var(--fs-xs); }

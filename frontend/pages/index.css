@@ -1,0 +1,36 @@
+/* index page styles. 抽屉/弹窗挂在 #overlay-root，所以弹层相关类名都用 idx- 前缀的全局选择器。 */
+.page[data-page="index"] .tbl-wrap { min-height: 260px; }
+.idx-bulk { flex: none; gap: 10px; }
+.idx-alias { display: inline-block; max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; }
+
+/* 批量删除确认框里的索引列表 */
+.idx-names { margin: 8px 0 0; padding-left: 18px; max-height: 180px; overflow: auto; list-style: disc; font-size: var(--fs-xs); color: var(--text-2); }
+
+/* 校验未通过的控件 */
+.input-wrap.idx-invalid .input,
+.textarea.idx-invalid { border-color: var(--err); }
+.input-wrap.idx-invalid .input:focus,
+.textarea.idx-invalid:focus { box-shadow: 0 0 0 2px var(--err-soft); }
+
+/* 创建索引：主分片 / 副本并排 */
+.idx-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
+
+/* 弹窗内的提示条 */
+.idx-note { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 12px; padding: 8px 10px; border-radius: var(--r-ctl); font-size: var(--fs-sm); color: var(--text); }
+.idx-note .ic { margin-top: 2px; flex: none; }
+.idx-note-warn { background: var(--warn-soft); }
+.idx-note-warn .ic { color: var(--warn); }
+.idx-note-info { background: var(--info-soft); }
+.idx-note-info .ic { color: var(--info); }
+.idx-hint { margin: 0 0 12px; color: var(--text-3); font-size: var(--fs-xs); }
+
+/* 别名管理 */
+.idx-alias-list { min-height: 72px; max-height: 220px; overflow: auto; }
+.idx-alias-row { display: flex; align-items: center; justify-content: space-between; min-height: 34px; padding: 2px 0; border-bottom: 1px solid var(--line-soft); }
+.idx-alias-row:last-child { border-bottom: 0; }
+.idx-sep { height: 1px; margin: 12px 0 16px; background: var(--line); }
+
+/* 索引备份状态行 */
+.idx-status { min-height: 20px; color: var(--text-2); font-size: var(--fs-xs); word-break: break-all; }
+.idx-status-ok { color: var(--ok); }
+.idx-status-err { color: var(--err); }

@@ -1,0 +1,86 @@
+/* 文档页 (docs)：类名统一加 docs- 前缀，颜色只用 CSS 变量。 */
+.docs-body { overflow: hidden; }
+.docs-tab-wrap { display: flex; flex-direction: column; gap: 12px; flex: 1 1 auto; min-height: 0; position: relative; }
+.docs-lbl { flex: none; color: var(--text-2); font-size: var(--fs-xs); }
+.docs-picker { display: inline-flex; align-items: center; gap: 4px; flex: none; }
+
+/* 可搜索下拉 */
+.docs-combo { position: relative; display: inline-flex; align-items: center; width: 260px; min-width: 160px; }
+.docs-combo-input { padding-right: 26px; }
+.docs-combo.clearable .docs-combo-input { padding-right: 44px; }
+.docs-combo-arrow { position: absolute; right: 6px; display: inline-flex; color: var(--text-3); cursor: pointer; transition: transform .12s; }
+.docs-combo.is-open .docs-combo-arrow { transform: rotate(180deg); }
+.docs-combo-clear {
+  position: absolute; right: 24px; display: none; align-items: center; justify-content: center; width: 18px; height: 18px; padding: 0;
+  border: 0; border-radius: 50%; background: none; color: var(--text-3); cursor: pointer;
+}
+.docs-combo-clear:hover { color: var(--text); background: var(--raised); }
+.docs-combo.clearable.has-value .docs-combo-clear { display: inline-flex; }
+.docs-pop {
+  position: fixed; z-index: 420; max-height: 280px; overflow: auto; padding: 4px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-pop); box-shadow: var(--shadow-pop);
+}
+.docs-pop-item {
+  height: 28px; line-height: 28px; padding: 0 10px; border-radius: var(--r-ctl); cursor: pointer;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: var(--font-mono); font-size: var(--fs-xs);
+}
+.docs-pop-item:hover, .docs-pop-item.active { background: var(--raised); }
+.docs-pop-item.is-current { color: var(--link); font-weight: 600; }
+.docs-pop-empty { padding: 8px 10px; color: var(--text-3); }
+
+/* 多值标签输入、过滤条件弹窗 */
+.docs-tags {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px; min-height: var(--h-ctl); padding: 2px 6px;
+  border: 1px solid var(--line); border-radius: var(--r-ctl); background: var(--sunken); cursor: text;
+}
+.docs-tags:focus-within { border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary-soft); }
+.docs-tags-input {
+  flex: 1; min-width: 100px; height: 22px; padding: 0; border: 0; outline: none; background: transparent;
+  font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text);
+}
+.docs-between { display: flex; align-items: center; gap: 8px; }
+.docs-between .input-wrap { flex: 1; min-width: 0; }
+
+/* 浏览页：查询行、过滤芯片 */
+.docs-range { max-width: 300px; }
+.docs-range-text { overflow: hidden; text-overflow: ellipsis; }
+.docs-queryrow { display: flex; align-items: flex-start; gap: 8px; flex: none; }
+.docs-qs { flex: 1; min-width: 0; display: flex; }
+.docs-qs .input-wrap, .docs-qs .textarea { flex: 1; min-width: 0; }
+.docs-queryrow .switch { flex: none; height: var(--h-ctl); }
+.docs-chips { display: flex; flex-wrap: wrap; gap: 6px; flex: none; }
+
+/* 浏览页：字段栏与结果 */
+.docs-main { display: flex; gap: 12px; flex: 1 1 auto; min-height: 340px; }
+.docs-fields {
+  display: flex; flex-direction: column; flex: none; width: 190px; min-height: 0;
+  padding-right: 12px; border-right: 1px solid var(--line-soft);
+}
+.docs-flist { flex: 1; min-height: 0; overflow: auto; margin-top: 6px; }
+.docs-fgroup { padding: 8px 6px 2px; color: var(--text-3); font-size: var(--fs-xs); }
+.docs-field { display: flex; align-items: center; gap: 6px; height: 26px; padding: 0 6px; border-radius: var(--r-ctl); color: var(--text); cursor: pointer; }
+.docs-field:hover { background: var(--raised); }
+.docs-field.sel { color: var(--link); }
+.docs-field .ic { color: var(--text-3); }
+.docs-field.sel .ic { color: var(--link); }
+.docs-fname { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--font-mono); font-size: var(--fs-xs); }
+.docs-ftype { flex: none; color: var(--text-3); font-size: var(--fs-xs); }
+.docs-fempty { padding: 4px 6px; }
+.docs-result { position: relative; flex: 1; min-width: 0; min-height: 0; display: flex; flex-direction: column; gap: 8px; }
+.docs-pager { display: flex; align-items: center; gap: 10px; flex: none; color: var(--text-2); font-size: var(--fs-xs); }
+.docs-pager .select { height: var(--h-ctl-sm); min-width: 92px; margin-left: auto; font-size: var(--fs-xs); }
+.docs-cell { cursor: pointer; border-bottom: 1px dashed transparent; }
+.docs-cell:hover { color: var(--link); border-bottom-color: var(--link); }
+
+/* 字段统计、导入 */
+.docs-statline { flex: none; color: var(--text-2); }
+.docs-statline:empty { display: none; }
+.docs-seg { display: inline-flex; flex: none; overflow: hidden; border: 1px solid var(--line); border-radius: var(--r-ctl); }
+.docs-seg-btn { height: calc(var(--h-ctl) - 2px); padding: 0 14px; border: 0; background: var(--surface); color: var(--text-2); cursor: pointer; }
+.docs-seg-btn + .docs-seg-btn { border-left: 1px solid var(--line); }
+.docs-seg-btn:hover { background: var(--raised); color: var(--text); }
+.docs-seg-btn.on { background: var(--primary-soft); color: var(--link); font-weight: 600; }
+.docs-hintrow { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex: none; min-height: 22px; }
+.docs-status { display: inline-flex; min-width: 0; }
+.docs-status .tag { max-width: 420px; overflow: hidden; text-overflow: ellipsis; }
+.docs-ta { flex: 1 1 auto; min-height: 220px; resize: vertical; }

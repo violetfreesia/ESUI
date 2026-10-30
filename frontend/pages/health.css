@@ -1,0 +1,23 @@
+/* health page styles */
+.health-host { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.health-main { position: relative; display: flex; flex-direction: column; gap: 14px; flex: 1 1 auto; min-height: 440px; }
+
+.health-hero { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 56px; flex: none; padding: 6px 0 20px; border-bottom: 1px solid var(--line-soft); }
+.health-vis { flex: 1 1 340px; min-width: 0; }
+.health-vis .ribbon-lg { height: 28px; border-radius: 14px; gap: 3px; }
+.health-vis .ribbon-legend { margin-top: 12px; gap: 6px 22px; font-size: var(--fs-sm); }
+.health-vis .ribbon-legend i { width: 10px; height: 10px; border-radius: 3px; }
+.health-total { margin-top: 6px; font-size: var(--fs-xs); }
+
+.health-facts { flex: none; display: grid; grid-template-columns: max-content max-content; align-items: center; gap: 10px 20px; margin: 0; }
+.health-facts dt { color: var(--text-3); font-size: var(--fs-xs); }
+.health-facts dd { margin: 0; display: flex; align-items: center; min-height: 22px; }
+.health-facts strong { font-size: var(--fs-md); font-weight: 600; }
+
+.health-sub { display: flex; align-items: baseline; gap: 10px; flex: none; }
+.health-sub h2 { font-size: var(--fs-md); font-weight: 600; }
+.health-sub .muted { font-family: var(--font-mono); font-size: var(--fs-xs); }
+
+.health-table { min-height: 260px; }
+
+.health-empty { display: flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 24px; }

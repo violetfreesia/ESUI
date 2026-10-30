@@ -1,0 +1,5 @@
+/* templates page styles. 弹层挂在 #overlay-root，校验态类名用 tpl- 前缀。 */
+.input-wrap.tpl-invalid .input,
+.textarea.tpl-invalid { border-color: var(--err); }
+.input-wrap.tpl-invalid .input:focus,
+.textarea.tpl-invalid:focus { box-shadow: 0 0 0 2px var(--err-soft); }

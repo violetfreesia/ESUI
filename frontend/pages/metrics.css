@@ -1,0 +1,99 @@
+/* metrics page styles (owned by this page only). Colours come from tokens only.
+   Composition charts use a neutral ramp (text-2 at falling opacity), because share-of-total is not a status. */
+
+.mt-host { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.mt-main { position: relative; display: flex; flex-direction: column; gap: 24px; flex: none; padding-bottom: 8px; }
+.mt-empty { display: flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 24px; }
+
+/* identity strip */
+.mt-id { display: flex; flex-wrap: wrap; gap: 12px 44px; padding: 2px 0 18px; border-bottom: 1px solid var(--line-soft); }
+.mt-id-i { display: flex; flex-direction: column; gap: 4px; min-width: 0; font-size: var(--fs-sm); }
+.mt-id-l { color: var(--text-3); font-size: var(--fs-xs); }
+.mt-id-i strong { font-size: var(--fs-lg); font-weight: 600; line-height: 1.3; }
+
+/* sections flow into as many columns as fit; one column under ~930px */
+.mt-grid { columns: 440px; column-gap: 56px; }
+.mt-sec { break-inside: avoid; margin: 0 0 30px; }
+.mt-sec-head { display: flex; align-items: baseline; gap: 10px; padding-bottom: 8px; margin-bottom: 4px; border-bottom: 1px solid var(--line); }
+.mt-sec-head h2 { font-size: var(--fs-md); font-weight: 600; }
+.mt-sec-head .muted { font-size: var(--fs-xs); }
+.mt-sub { display: flex; align-items: baseline; gap: 8px; margin: 18px 0 8px; font-size: var(--fs-xs); font-weight: 600; color: var(--text-2); }
+.mt-sub .muted { font-weight: 400; }
+.mt-note { margin-top: 8px; font-size: var(--fs-xs); line-height: 1.5; }
+
+/* key / value list */
+.mt-kv { display: grid; grid-template-columns: minmax(84px, max-content) minmax(0, 1fr); gap: 6px 20px; margin: 0; font-size: var(--fs-sm); }
+.mt-kv dt { color: var(--text-3); }
+.mt-kv dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.mt-kv dd.mono { font-size: var(--fs-xs); line-height: 1.7; }
+.mt-sub + .mt-kv, .mt-stackbox + .mt-kv, .mt-meter + .mt-kv, .mt-kv + .mt-sub { margin-top: 10px; }
+
+/* capacity meter */
+.mt-meter { margin: 8px 0; }
+.mt-meter-h { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 4px; font-size: var(--fs-sm); }
+.mt-meter-h .mono { color: var(--text-2); font-size: var(--fs-xs); }
+
+/* horizontal bars; rows share one grid so the three columns line up */
+.mt-bars { display: grid; grid-template-columns: minmax(70px, 120px) minmax(60px, 1fr) max-content; gap: 6px 12px; align-items: center; }
+.mt-bar { display: contents; }
+.mt-bar-l { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--fs-sm); }
+.mt-bar-l.mono { font-size: var(--fs-xs); }
+.mt-bar-t { height: 6px; border-radius: 3px; background: var(--raised); overflow: hidden; }
+.mt-bar-t i { display: block; height: 100%; border-radius: 3px; background: var(--text-3); }
+.mt-bar-v { text-align: right; color: var(--text-2); font-size: var(--fs-xs); white-space: nowrap; }
+.mt-bar.is-zero .mt-bar-l { color: var(--text-3); }
+
+/* stacked bar + legend */
+.mt-stackbox { margin: 6px 0; }
+.mt-stack { display: flex; gap: 2px; height: 10px; border-radius: 5px; overflow: hidden; background: var(--raised); }
+.mt-stack i { display: block; height: 100%; min-width: 3px; background: var(--text-2); }
+.mt-legend { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 2px; }
+.mt-legend li { display: grid; grid-template-columns: 10px minmax(0, 1fr) max-content 56px; gap: 8px; align-items: center; font-size: var(--fs-xs); line-height: 22px; }
+.mt-legend li > i { width: 10px; height: 10px; border-radius: 2px; background: var(--text-2); }
+.mt-legend b { font-weight: 500; text-align: right; }
+.mt-legend .muted { text-align: right; }
+.mt-c0 { opacity: .95; } .mt-c1 { opacity: .68; } .mt-c2 { opacity: .5; }
+.mt-c3 { opacity: .36; } .mt-c4 { opacity: .26; } .mt-c5 { opacity: .18; }
+
+/* min / avg / max range plot: shapes in SVG, numbers in HTML */
+.mt-range { display: grid; grid-template-columns: 72px minmax(80px, 1fr) max-content; gap: 12px; align-items: center; margin-bottom: 8px; font-size: var(--fs-sm); }
+.mt-range-l { color: var(--text-2); }
+.mt-range-p { height: 14px; }
+.mt-range-svg { display: block; width: 100%; height: 14px; overflow: visible; }
+.mt-range-svg .ax { stroke: var(--line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.mt-range-svg .band { fill: var(--text-3); opacity: .5; }
+.mt-range-svg .avg { stroke: var(--text); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.mt-range-v { color: var(--text-2); font-size: var(--fs-xs); white-space: nowrap; }
+
+/* small tables inside sections */
+.mt-tbl { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+.mt-tbl th, .mt-tbl td { padding: 6px 0; text-align: left; border-bottom: 1px solid var(--line-soft); }
+.mt-tbl th { color: var(--text-3); font-size: var(--fs-xs); font-weight: 600; border-bottom-color: var(--line); }
+.mt-tbl th.num, .mt-tbl td.num { text-align: right; padding-left: 14px; }
+.mt-tbl td.num { font-size: var(--fs-xs); }
+.mt-tbl tr:last-child td { border-bottom: 0; }
+
+/* analysis components: collapsible name lists */
+.mt-dets { border-top: 1px solid var(--line-soft); }
+.mt-det { border-bottom: 1px solid var(--line-soft); }
+.mt-det summary { display: flex; align-items: center; gap: 8px; padding: 7px 0; cursor: pointer; list-style: none; user-select: none; font-size: var(--fs-sm); }
+.mt-det summary::-webkit-details-marker { display: none; }
+.mt-det summary::before { content: ""; flex: none; width: 6px; height: 6px; margin: 0 4px 0 2px; border-right: 1.5px solid var(--text-3); border-bottom: 1.5px solid var(--text-3); transform: rotate(-45deg); transition: transform .15s var(--ease); }
+.mt-det[open] summary::before { transform: rotate(45deg); }
+.mt-det summary:hover { color: var(--link); }
+.mt-det summary .muted { margin-left: auto; font-size: var(--fs-xs); }
+.mt-items { display: flex; flex-wrap: wrap; gap: 6px; padding: 2px 0 10px 16px; }
+.mt-item { display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border-radius: var(--r-ctl); background: var(--raised); color: var(--text-2); font-size: var(--fs-xs); }
+.mt-item em { font-style: normal; color: var(--text-3); }
+.mt-none { padding: 2px 0 10px 16px; font-size: var(--fs-xs); }
+
+/* all-keys table */
+.mt-all { display: flex; flex-direction: column; gap: 10px; }
+.mt-tbl-head { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 10px; }
+.mt-tbl-head h2 { font-size: var(--fs-md); font-weight: 600; }
+.mt-tbl-head .muted { font-size: var(--fs-xs); }
+.mt-val { display: inline-flex; align-items: baseline; gap: 8px; max-width: 100%; }
+.mt-val .muted { font-family: var(--font-sans); font-size: var(--fs-xs); }
+.mt-arr { display: inline-flex; align-items: center; gap: 10px; max-width: 100%; }
+.mt-arr-t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-2); font-size: var(--fs-xs); }
+.mt-arr .cell-link { flex: none; font-size: var(--fs-xs); }

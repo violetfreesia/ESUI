@@ -7,7 +7,7 @@ on:
 env:
   APP_NAME: 'ESUI'
   APP_WORKING_DIRECTORY: '.'
-  GO_VERSION: '1.24'
+  GO_VERSION: '1.25'
 
 jobs:
   build-windows:
@@ -36,10 +36,9 @@ jobs:
           go install github.com/wailsapp/wails/v2/cmd/wails@latest
           cd ${{ env.APP_WORKING_DIRECTORY }}
           wails build -ldflags="-X 'app/backend/common.Version=${{ github.ref_name }}'" -webview2 download -o ${{ env.APP_NAME }}.exe
-          cd ..
-          copy readme.md app\build\bin\
-          copy LICENSE app\build\bin\
-          & "C:\Program Files\7-Zip\7z.exe" a -t7z "${{ env.APP_NAME }}-${{ github.ref_name }}-windows-x64.7z" ".\app\build\bin\*" -r
+          copy readme.md build\bin\
+          copy LICENSE build\bin\
+          & "C:\Program Files\7-Zip\7z.exe" a -t7z "${{ env.APP_NAME }}-${{ github.ref_name }}-windows-x64.7z" ".\build\bin\*" -r
           
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v1
@@ -122,7 +121,6 @@ jobs:
           go install github.com/wailsapp/wails/v2/cmd/wails@latest
           cd ${{ env.APP_WORKING_DIRECTORY }}
           wails build -ldflags="-X 'app/backend/common.Version=${{ github.ref_name }}'" -webview2 download -o ${{ env.APP_NAME }}
-          cd ..
           mkdir _temp_dist
           cp readme.md _temp_dist/
           cp LICENSE _temp_dist/
